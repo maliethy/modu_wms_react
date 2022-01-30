@@ -2,7 +2,7 @@ import react from 'react';
 
 function Footerbar() {
   return (
-    <footer className="bg-white tb:bg-red-50 flex flex-col justify-center items-center tb:flex-row  tb:justify-between shadow rounded-lg p-4 md:p-6 md:p-8 my-6 mx-4">
+    <footer className="bg-white flex flex-col justify-center items-center tb:flex-row  tb:justify-between shadow rounded-lg p-4 md:p-6 md:p-8 my-6 mx-4">
       <ul className="flex items-center flex-wrap mb-6 tb:mb-0">
         <li>
           <a href="#" className="text-sm font-normal text-gray-500 hover:underline mr-4 tb:mr-6">

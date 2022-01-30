@@ -5,6 +5,7 @@ module.exports = {
   theme: {
     screens: {
       //Responsive Design
+      xs: '475px',
       tb: '600px', //tablet
       ...defaultTheme.screens,
     },

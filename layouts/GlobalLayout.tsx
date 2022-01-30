@@ -1,21 +1,37 @@
-import react, { ReactNode } from 'react';
+import React, { ReactNode, useState, useCallback, useEffect } from 'react';
 import Headerbar from '../Components/Headerbar';
 import Sidebar from '../Components/Sidebar';
 import Footerbar from '../Components/Footerbar';
+import getWindowDimensions from '@utils/getWindowDimensions';
 
 interface GlobalLayoutProps {
   children: ReactNode;
 }
 function GlobalLayout({ children }: GlobalLayoutProps) {
-  return (
-    // <>
-    //
-    // </>
+  const [visible, setVisible] = useState(true);
 
+  const handleVisibleSidebar = useCallback(() => {
+    setVisible((prev) => !prev);
+  }, []);
+
+  // useEffect(() => {
+  //   console.log('visible', visible);
+  // }, [visible]);
+
+  useEffect(() => {
+    if (getWindowDimensions()?.width < 1024) {
+      setVisible(false);
+    } else {
+      setVisible(true);
+    }
+    // console.log(getWindowDimensions().width);
+  }, []);
+
+  return (
     <div>
-      <Headerbar />
-      <Sidebar />
-      <div className="flex overflow-hidden bg-white pt-16">
+      <Headerbar handleVisibleSidebar={handleVisibleSidebar} />
+      <Sidebar visible={visible} />
+      <div className="flex overflow-hidden bg-white pt-28 xs:pt-16">
         <div className="bg-gray-900 opacity-50 hidden fixed inset-0 z-10" id="sidebarBackdrop"></div>
         <div id="main-content" className="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64">
           <div>{children}</div>
