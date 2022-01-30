@@ -5,8 +5,8 @@ function Sidebar({ visible }) {
     <aside
       id="sidebar"
       className={`fixed  ${
-        visible ? 'block' : 'hidden'
-      } lg:block z-20 h-full top-0 left-0 pt-16 flex lg:flex flex-shrink-0 flex-col w-64 transition-width duration-75`}
+        !visible ? '-translate-x-full' : 'translate-x-0'
+      }  lg:translate-x-0 z-20 h-full transform top-0 left-0 pt-16 flex lg:flex flex-shrink-0 flex-col w-64 ease-in-out transition-width duration-500`}
       aria-label="Sidebar"
     >
       <div className="relative flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-white pt-0">
