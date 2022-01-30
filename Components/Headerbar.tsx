@@ -1,12 +1,12 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import RiBarChartHorizontalFill from '@meronex/icons/ri/RiBarChartHorizontalFill';
 
 function Headerbar({ handleVisibleSidebar }) {
   return (
     <nav className="bg-white border-b border-gray-200 fixed z-30 w-full">
-      <div className="px-3 py-3.5 sm:py-4 lg:px-5 lg:pl-3">
+      <div className="px-3 py-5 lg:px-5 lg:pl-3">
         <div className="flex items-center justify-center tb:justify-between flex-wrap ">
-          <div className="flex items-center mb-2 sm:mb-0">
+          <div className="flex items-center mr-20 mb-2 sm:mb-0">
             <button
               id="toggleSidebarMobile"
               aria-expanded="true"
@@ -16,7 +16,7 @@ function Headerbar({ handleVisibleSidebar }) {
             >
               <RiBarChartHorizontalFill />
             </button>
-            <a href="https://demo.themesberg.com/windster/" className="text-xl font-bold flex items-center lg:ml-2.5">
+            <a href="#" className="text-xl font-bold flex items-center lg:ml-2.5">
               <span className="self-center whitespace-nowrap">MODUMENT WMS</span>
             </a>
           </div>

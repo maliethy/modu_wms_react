@@ -1,13 +1,13 @@
 import React, { ReactNode, useState, useCallback, useEffect } from 'react';
-import Headerbar from '../Components/Headerbar';
-import Sidebar from '../Components/Sidebar';
-import Footerbar from '../Components/Footerbar';
+import Headerbar from '../components/Headerbar';
+import Sidebar from '../components/Sidebar';
+import Footerbar from '../components/Footerbar';
 
 interface GlobalLayoutProps {
   children: ReactNode;
 }
 function GlobalLayout({ children }: GlobalLayoutProps) {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   const handleVisibleSidebar = useCallback(() => {
     window?.innerWidth < 1024 && setVisible((prev) => !prev);
@@ -29,7 +29,7 @@ function GlobalLayout({ children }: GlobalLayoutProps) {
     <div>
       <Headerbar handleVisibleSidebar={handleVisibleSidebar} />
       <Sidebar visible={visible} />
-      <div className="flex overflow-hidden bg-white pt-28 xs:pt-16">
+      <div className="flex overflow-hidden bg-white pt-20 xs:pt-18">
         <div className="bg-gray-900 opacity-50 hidden fixed inset-0 z-10" id="sidebarBackdrop"></div>
         <div
           onClick={handleVisibleSidebar}
@@ -40,8 +40,8 @@ function GlobalLayout({ children }: GlobalLayoutProps) {
           <Footerbar />
           <p className="text-center text-sm text-gray-500 my-10">
             &copy; 2022{' '}
-            <a href="https://themesberg.com" className="hover:underline" rel="noreferrer" target="_blank">
-              modument
+            <a href="#" className="hover:underline" rel="noreferrer" target="_blank">
+              Modument
             </a>
             . All rights reserved.
           </p>
