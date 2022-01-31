@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 function Sidebar({ visible }) {
   return (
@@ -14,113 +15,89 @@ function Sidebar({ visible }) {
           <div className="flex-1 px-3 bg-white divide-y space-y-1">
             <ul className="space-y-3 pb-2">
               <li>
-                <a
-                  href="/products"
-                  target="_blank"
-                  className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group "
-                >
-                  {/* icon */}
-                  <span className="ml-3 flex-1 whitespace-nowrap">상품</span>
-                </a>
+                <Link href="/product">
+                  <a className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
+                    {/* icon */}
+                    <span className="ml-3 flex-1 whitespace-nowrap">상품</span>
+                  </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/incoming"
-                  target="_blank"
-                  className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group "
-                >
-                  {/* icon */}
-                  <span className="ml-3 flex-1 whitespace-nowrap">입고</span>
-                </a>
+                <Link href="/incoming">
+                  <a
+                    target="_blank"
+                    className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group "
+                  >
+                    {/* icon */}
+                    <span className="ml-3 flex-1 whitespace-nowrap">입고</span>
+                  </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="https://demo.themesberg.com/windster/users/list/"
-                  className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group "
-                >
-                  {/* icon */}
-                  <span className="ml-3 flex-1 whitespace-nowrap">재고</span>
-                </a>
+                <Link href="/stock">
+                  <a className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
+                    {/* icon */}
+                    <span className="ml-3 flex-1 whitespace-nowrap">재고</span>
+                  </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="https://demo.themesberg.com/windster/e-commerce/products/"
-                  className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group "
-                >
-                  {/* icon */}
-                  <span className="ml-3 flex-1 whitespace-nowrap">이동</span>
-                </a>
+                <Link href="/location">
+                  <a className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
+                    {/* icon */}
+                    <span className="ml-3 flex-1 whitespace-nowrap">이동</span>
+                  </a>
+                </Link>
               </li>
             </ul>
             <ul className="space-y-3 py-2">
               <li>
-                <a
-                  href="https://demo.themesberg.com/windster/authentication/sign-in/"
-                  className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group "
-                >
-                  {/* icon */}
-                  <span className="ml-3 flex-1 whitespace-nowrap">발주</span>
-                </a>
+                <Link href="/order">
+                  <a className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
+                    {/* icon */}
+                    <span className="ml-3 flex-1 whitespace-nowrap">발주</span>
+                  </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="https://demo.themesberg.com/windster/authentication/sign-up/"
-                  className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group "
-                >
-                  {/* icon */}
-                  <span className="ml-3 flex-1 whitespace-nowrap">출고</span>
-                </a>
+                <Link href="/delivery">
+                  <a className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
+                    {/* icon */}
+                    <span className="ml-3 flex-1 whitespace-nowrap">출고</span>
+                  </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="https://demo.themesberg.com/windster/authentication/sign-in/"
-                  className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group "
-                >
-                  {/* icon */}
-                  <span className="ml-3 flex-1 whitespace-nowrap">반품</span>
-                </a>
+                <Link href="/return">
+                  <a className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
+                    {/* icon */}
+                    <span className="ml-3 flex-1 whitespace-nowrap">반품</span>
+                  </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="https://demo.themesberg.com/windster/authentication/sign-up/"
-                  className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group "
-                >
-                  {/* icon */}
-                  <span className="ml-3 flex-1 whitespace-nowrap">교환</span>
-                </a>
+                <Link href="/exchange">
+                  <a className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
+                    {/* icon */}
+                    <span className="ml-3 flex-1 whitespace-nowrap">교환</span>
+                  </a>
+                </Link>
               </li>
             </ul>
-
             <div className="space-y-3 pt-2">
-              <a
-                href="https://demo.themesberg.com/windster/"
-                className="text-base text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group"
-              >
-                <span className="ml-3">관리</span>
-              </a>
-              <a
-                href="/"
-                target="_blank"
-                className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 group transition duration-75 flex items-center p-2"
-              >
-                <span className="ml-3">문의</span>
-              </a>
+              <Link href="/setting">
+                <a className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
+                  {/* icon */}
+                  <span className="ml-3 flex-1 whitespace-nowrap">관리</span>
+                </a>
+              </Link>
+              <Link href="/inquiry">
+                <a className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-2 group ">
+                  {/* icon */}
+                  <span className="ml-3 flex-1 whitespace-nowrap">문의</span>
+                </a>
+              </Link>
             </div>
-            {/* <div className="space-y-3 pt-2">
-              <a
-                href="https://demo.themesberg.com/windster/"
-                className="text-base text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group"
-              >
-                <span className="ml-3">통계</span>
-              </a>
-              <a
-                href="/"
-                target="_blank"
-                className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 group transition duration-75 flex items-center p-2"
-              >
-                <span className="ml-3">연동</span>
-              </a>
-            </div> */}
           </div>
         </div>
       </div>

@@ -1,9 +1,9 @@
-import react, { useState } from "react";
-import { AppProps, NextWebVitalsMetric } from "next/app";
+import React, { useState } from 'react';
+import { AppProps, NextWebVitalsMetric } from 'next/app';
 
-import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
-import "@styles/globals.css";
+import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import '@styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
