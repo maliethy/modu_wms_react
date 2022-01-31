@@ -13,15 +13,17 @@ function GlobalLayout({ children }: GlobalLayoutProps) {
     window?.innerWidth < 1024 && setVisible((prev) => !prev);
   }, []);
 
-  // useEffect(() => {
-  //   console.log('visible', visible);
-  // }, [visible]);
-
   useEffect(() => {
-    if (window?.innerWidth < 1024) {
-      setVisible(false);
-    } else {
-      setVisible(true);
+    if (window) {
+      const checkInnerWidth = function () {
+        if (window?.innerWidth < 1024) {
+          setVisible(false);
+        } else {
+          setVisible(true);
+        }
+      };
+      window?.addEventListener('resize', checkInnerWidth);
+      return () => window.removeEventListener('resize', checkInnerWidth);
     }
   }, []);
 

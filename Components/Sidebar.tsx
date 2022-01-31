@@ -4,7 +4,7 @@ function Sidebar({ visible }) {
   return (
     <aside
       id="sidebar"
-      className={`fixed ${
+      className={`fixed  ${
         !visible ? '-translate-x-full' : 'translate-x-0'
       } lg:translate-x-0 z-20 h-full transform top-0 left-0 pt-16 flex lg:flex flex-shrink-0 flex-col w-64 ease-in-out transition-width duration-500`}
       aria-label="Sidebar"
