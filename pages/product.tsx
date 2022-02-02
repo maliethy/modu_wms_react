@@ -1,86 +1,29 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import GlobalLayout from '@layouts/GlobalLayout';
-
+import Table from '@components/Table';
+import Modal from '@components/Modal';
 function Product() {
+  const [visibleModal, setVisibleModal] = useState(false);
+
+  const handleModalVisible = useCallback(() => {
+    setVisibleModal(true);
+  }, []);
   return (
     <GlobalLayout>
-      <main>
-        <div className="pt-14 tb:pt-12 px-4">
-          <div className="w-2/3 mx-auto">
-            <div className="bg-white shadow-md rounded my-6">
-              <table className="text-left w-full border-collapse">
-                <thead>
-                  <tr>
-                    <th className="py-4 px-6 bg-gray-50 font-bold uppercase text-sm text-grey-dark border-b border-grey-light">
-                      City
-                    </th>
-                    <th className="py-4 px-6 bg-gray-50 font-bold uppercase text-sm text-grey-dark border-b border-grey-light">
-                      Actions
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="hover:bg-gray-50">
-                    <td className="py-4 px-6 border-b border-grey-light">New York</td>
-                    <td className="py-4 px-6 border-b border-grey-light">
-                      <a href="#" className="font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark">
-                        Edit
-                      </a>
-                      <a href="#" className="font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">
-                        View
-                      </a>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="py-4 px-6 border-b border-grey-light">Paris</td>
-                    <td className="py-4 px-6 border-b border-grey-light">
-                      <a href="#" className="font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark">
-                        Edit
-                      </a>
-                      <a href="#" className="font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">
-                        View
-                      </a>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="py-4 px-6 border-b border-grey-light">London</td>
-                    <td className="py-4 px-6 border-b border-grey-light">
-                      <a href="#" className="font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark">
-                        Edit
-                      </a>
-                      <a href="#" className="font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">
-                        View
-                      </a>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="py-4 px-6 border-b border-grey-light">Oslo</td>
-                    <td className="py-4 px-6 border-b border-grey-light">
-                      <a href="#" className="font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark">
-                        Edit
-                      </a>
-                      <a href="#" className="font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">
-                        View
-                      </a>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="py-4 px-6 border-b border-grey-light">Mexico City</td>
-                    <td className="py-4 px-6 border-b border-grey-light">
-                      <a href="#" className="font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark">
-                        Edit
-                      </a>
-                      <a href="#" className="font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">
-                        View
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+      <div className="mt-28 px-8 mx-auto">
+        <button
+          onClick={handleModalVisible}
+          className="text-pink-500 bg-transparent border border-solid border-pink-500 hover:bg-pink-500 hover:text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          type="button"
+        >
+          상품 추가하기
+        </button>
+
+        {visibleModal && <Modal setVisible={setVisibleModal} />}
+        <div className="bg-white shadow-md rounded">
+          <Table />
         </div>
-      </main>
+      </div>
     </GlobalLayout>
   );
 }

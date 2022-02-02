@@ -31,14 +31,14 @@ function GlobalLayout({ children }: GlobalLayoutProps) {
     <div>
       <Headerbar handleVisibleSidebar={handleVisibleSidebar} />
       <Sidebar visible={visible} />
-      <div className="flex overflow-hidden bg-white pt-12 xs:pt-18">
+      <div className="flex overflow-hidden bg-gray-50 pt-12 xs:pt-18">
         <div className="bg-gray-900 opacity-50 hidden fixed inset-0 z-10" id="sidebarBackdrop"></div>
         <div
           onClick={handleVisibleSidebar}
           id="main-content"
-          className="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64"
+          className="h-full w-full  relative overflow-y-auto lg:ml-64"
         >
-          <div>{children}</div>
+          {children}
           <Footerbar />
           <p className="text-center text-sm text-gray-500 my-10">
             &copy; 2022{' '}
@@ -49,7 +49,6 @@ function GlobalLayout({ children }: GlobalLayoutProps) {
           </p>
         </div>
       </div>
-      <script async defer src="https://buttons.github.io/buttons.js"></script>
     </div>
   );
 }

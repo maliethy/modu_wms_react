@@ -1,5 +1,6 @@
 import React from 'react';
 import RiBarChartHorizontalFill from '@meronex/icons/ri/RiBarChartHorizontalFill';
+import Link from 'next/link';
 
 function Headerbar({ handleVisibleSidebar }) {
   return (
@@ -16,9 +17,11 @@ function Headerbar({ handleVisibleSidebar }) {
             >
               <RiBarChartHorizontalFill />
             </button>
-            <a href="#" className="text-xl font-bold flex items-center lg:ml-2.5">
-              <span className="self-center whitespace-nowrap">MODUMENT WMS</span>
-            </a>
+            <Link href="/">
+              <a className="text-xl font-bold flex items-center lg:ml-2.5">
+                <span className="self-center whitespace-nowrap">MODUMENT WMS</span>
+              </a>
+            </Link>
           </div>
           <div className="flex items-center justify-end">
             <button
