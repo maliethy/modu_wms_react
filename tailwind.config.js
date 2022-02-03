@@ -4,7 +4,11 @@ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
-    './node_modules/tw-elements/dist/js/**/*.js',
+    './layouts/**/*.{js,ts,jsx,tsx,css}',
+    './interfaces/**/*.{js,ts,jsx,tsx}',
+    './hooks/**/*.{js,ts,jsx,tsx}',
+    './utils/**/*.{js,ts,jsx,tsx}',
+    './apis/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     screens: {
@@ -14,6 +18,5 @@ module.exports = {
       ...defaultTheme.screens,
     },
     extend: {},
-    plugins: [require('tw-elements/dist/plugin')],
   },
 };

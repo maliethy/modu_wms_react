@@ -1,7 +1,7 @@
 import React, { ReactNode, useState, useCallback, useEffect } from 'react';
-import Headerbar from '../components/Headerbar';
-import Sidebar from '../components/Sidebar';
-import Footerbar from '../components/Footerbar';
+import Headerbar from '../../components/Headerbar';
+import Sidebar from '../../components/Sidebar';
+import Footerbar from '../../components/Footerbar';
 
 interface GlobalLayoutProps {
   children: ReactNode;
@@ -36,7 +36,7 @@ function GlobalLayout({ children }: GlobalLayoutProps) {
         <div
           onClick={handleVisibleSidebar}
           id="main-content"
-          className="h-full w-full  relative overflow-y-auto lg:ml-64"
+          className="h-full w-full relative overflow-y-auto lg:ml-64 mt-20 sm:mt-18 px-8"
         >
           {children}
           <Footerbar />
