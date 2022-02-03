@@ -9,6 +9,7 @@ module.exports = {
     './hooks/**/*.{js,ts,jsx,tsx}',
     './utils/**/*.{js,ts,jsx,tsx}',
     './apis/**/*.{js,ts,jsx,tsx}',
+    './states/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     screens: {

@@ -3,9 +3,14 @@ import GlobalLayout from '@layouts/GlobalLayout';
 import styles from '@layouts/GlobalLayout/GlobalLayout.module.css';
 import Table from '@components/Table';
 import Modal from '@components/Modal';
+import { useRecoilState } from 'recoil';
+import { userState } from '@states/user';
+
 function Product() {
   const [visibleModal, setVisibleModal] = useState(false);
+  const [userToke, setUserToken] = useRecoilState(userState);
 
+  // console.log('userToke', userToke);
   const handleModalVisible = useCallback(() => {
     setVisibleModal(true);
   }, []);
