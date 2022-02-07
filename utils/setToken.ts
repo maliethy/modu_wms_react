@@ -3,7 +3,7 @@ import reactCookies from 'react-cookies';
 let savedRefreshTokenExpireTime = [];
 const onlyHTTPS = process.env.NODE_ENV === 'development' ? false : true;
 
-function setToken(omsID: number, refreshToken: string, refreshTokenExpireTime?: string) {
+function setToken(refreshToken: string, omsID?: number, refreshTokenExpireTime?: string) {
   if (refreshTokenExpireTime) {
     savedRefreshTokenExpireTime.push(new Date(refreshTokenExpireTime));
   }

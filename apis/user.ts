@@ -1,7 +1,7 @@
-import { axiosApiInstance } from './index';
+import setupAxios from './setupAxios';
 import { PostSignInRequest, PostSignInResponse } from '@interfaces/user';
 
 export async function postSignIn(data) {
-  const response = axiosApiInstance.post<PostSignInRequest, PostSignInResponse>('Web/SignIn', data);
+  const response = setupAxios().post<PostSignInRequest, PostSignInResponse>('Web/SignIn', data);
   return response;
 }

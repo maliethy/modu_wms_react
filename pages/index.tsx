@@ -20,7 +20,7 @@ function Homepage() {
           omsID: res.data.omsID,
           permission: res.data.permission,
         });
-        setToken(res.data.omsID, res.data.refreshToken, res.data.refreshTokenExpireTime);
+        setToken(res.data.refreshToken, res.data.omsID, res.data.refreshTokenExpireTime);
       })
       .catch((err) => {
         console.error('err', err);
